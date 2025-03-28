@@ -22,19 +22,12 @@ fun ButtonLibraryComposable() {
     var showAlert by remember { mutableStateOf(false) }
     val context = LocalContext.current
 
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-        Button(onClick = {
+    Button(onClick = {
             showAlert = true
         }) {
             Text("Mostrar Alerta")
         }
-
-        MyAlert(showAlert, onDismiss = { showAlert = false }, context)
-    }
+    MyAlert(showAlert, onDismiss = { showAlert = false }, context)
 }
 
 @Composable
